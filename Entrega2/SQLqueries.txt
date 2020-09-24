@@ -1,0 +1,21 @@
+-- 1. Muestre el nombre de todas las navieras.
+SELECT nav_nombre FROM Naviera;
+
+-- 2. Muestre todos los buques de la naviera ‘Francis Drake S.A.’.
+SELECT Buque.*, IdBuqueNombre.buq_nombre, IdBuquePatente.patente  FROM Tiene, Buque, IdBuqueNombre, IdBuquePatente WHERE IdBuquePatente.buq_id = Buque.buq_id AND IdBuqueNombre.buq_id = Buque.buq_id AND Tiene.buq_id = Buque.buq_id AND nav_nombre = 'Francis Drake S.A.';
+
+-- 3. Muestre todos los buques que hayan atracado en ‘Valparaiso’ el 2020.
+-- Incluir fecha de atraque?
+SELECT Atraque.fecha_atraque, Buque.*, IdBuqueNombre.buq_nombre, IdBuquePatente.patente FROM Atraque, Buque, IdBuqueNombre, IdBuquePatente WHERE IdBuquePatente.buq_id = Buque.buq_id AND IdBuqueNombre.buq_id = Buque.buq_id AND Atraque.buq_id = Buque.buq_id AND Atraque.fecha_atraque > '2019-12-31 23:59:59' AND Atraque.fecha_atraque < '2021-01-01 00:00:00' ORDER BY Atraque.fecha_atraque;
+
+-- 4. Muestre todos los buques que hayan estado en ‘Mejillones’ al mismo tiempo que el buque ‘Magnolia’.
+-- No hay buque 'Magnolia'
+-- Esto da los atraques del buque 'Acorazado' en el puerto 'Mejillones'
+SELECT * FROM Buque, Atraque, IdBuqueNombre WHERE IdBuqueNombre.buq_id = Buque.buq_id AND Atraque.buq_id = Buque.buq_id AND IdBuqueNombre.buq_nombre = 'Acorazado' AND Atraque.nombre_puerto = 'Mejillones';
+
+-- 5. Encuentre todos los capitanes mujeres que han pasado por el puerto ‘Talcahuano’.
+SELECT Personal.*, IdPersonalPasaporte.pasaporte, IdPersonalNombre.per_nombre FROM Personal, Trabajan, Atraque, IdPersonalPasaporte, IdPersonalNombre WHERE Personal.per_id = IdPersonalPasaporte.per_id AND Personal.per_id = IdPersonalNombre.per_id AND Personal.per_id = Trabajan.per_id AND Personal.genero = 'mujer' AND Trabajan.cargo = 'capitan' AND Atraque.buq_id = Trabajan.buq_id AND Atraque.nombre_puerto = 'Talcahuano';
+
+-- 6. Encuentre el buque pesquero que tiene m´as personas trabajando
+-- Mostrar cantidad de personas?
+SELECT Trabajan.buq_id, IdBuqueNombre.buq_nombre, IdBuquePatente.patente, COUNT(Trabajan.buq_id) FROM Trabajan, BuquePesquero, IdBuqueNombre, IdBuquePatente WHERE IdBuqueNombre.buq_id = BuquePesquero.buq_id AND IdBuquePatente.buq_id = BuquePesquero.buq_id AND Trabajan.buq_id = BuquePesquero.buq_id  GROUP BY Trabajan.buq_id, IdBuqueNombre.buq_nombre, IdBuquePatente.patente HAVING COUNT(Trabajan.buq_id) = (SELECT MAX(maximo.valor) FROM (SELECT Trabajan.buq_id, COUNT(Trabajan.buq_id) AS valor FROM Trabajan, BuquePesquero WHERE Trabajan.buq_id = BuquePesquero.buq_id  GROUP BY Trabajan.buq_id) AS maximo);

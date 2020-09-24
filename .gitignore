@@ -1,0 +1,25 @@
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+
+# Ignore uploaded files in development
+/storage/*
+
+/node_modules
+/yarn-error.log
+
+/public/assets
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Unignore .gitkeep files
+!.gitkeep
+.env
+
+/Entrega2/example-app
+/Entrega2/Ayudantia.pdf
+/Entrega2/basic_php.php
+/Entrega2/pokedex.csv
