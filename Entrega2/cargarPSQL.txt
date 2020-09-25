@@ -38,4 +38,4 @@ CREATE TABLE Atraque(atraque_id INT, buq_id INT, puerto_id INT, FOREIGN KEY(buq_
 \COPY Atraque from 'Atraque.csv' DELIMITER ',' CSV HEADER;
 
 CREATE TABLE AtraqueFecha(atraque_id INT, fecha_atraque TIMESTAMP, fecha_salida TIMESTAMP, FOREIGN KEY(atraque_id) REFERENCES Atraque, PRIMARY KEY(atraque_id));
-\COPY AtraqueFecha fomr 'AtraqueFecha.csv' DELIMITER ',' CSV HEADER;
+\COPY AtraqueFecha from 'AtraqueFecha.csv' DELIMITER ',' CSV HEADER;

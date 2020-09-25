@@ -1,0 +1,8 @@
+1. Muestre el nombre de todas las navieras.
+SELECT nav_nombre FROM Naviera;
+
+2. Muestre todos los buqeus de la naviera 'Francis Drake S.A.'.
+SELECT Buque.* , IdBuquePatente.patente FROM Buque, IdBuquePatente, Naviera WHERE Buque.nav_id = Naviera.nav_id AND Buque.buq_id = IdBuquePatente.buq_id;
+
+3. Muestre todos los buques que hayan atracado en 'Valparaiso' el 2020.
+SELECT Buque.*, IdBuquePatente.patente FROM Buque, IdBuquePatente, Atraque, AtraqueFecha, Puerto WHERE Puerto.puerto_nombre = 'Valparaiso' AND (YEAR(AtraqueFecha.fecha_atraque) = 2020 OR YEAR(AtraqueFecha.fecha_salida) = 2020) AND Atraque.puerto_id = Puerto.puerto_id AND Buque.buq_id = Atraque.buq_id AND Buque.buq_id = IdBuquePatente.buq_id;
