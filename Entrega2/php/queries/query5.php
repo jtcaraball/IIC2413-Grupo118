@@ -5,7 +5,13 @@
         # Import database object.
         require("../config/connection.php");
         # Declare query.
-        $genero = strtoupper($_POST["genero"]);
+        # Catch if the gender field is left unanswered.
+        try {
+            $genero = strtoupper($_POST["genero"]);
+        } catch (Exception $e) {
+            # In case it is return an empty table.
+            $genero = " "
+        }
         $puerto_nombre = strtoupper($_POST["puerto_nombre"]);
         $query = "";
         # Retrieve data array.
