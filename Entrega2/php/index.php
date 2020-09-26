@@ -1,10 +1,5 @@
 <?php include('layout/header.html') ?>
 
-<!-- 
-    IMPORTANTE: No esta implementado un sistema de catch para formas mal enviadas
-    como por ejemplo si se enviase una celda sin completar o un checkbox sin marcar.
--->
-
 <body>
 
     <h1 align="center">Consultas</h1>
