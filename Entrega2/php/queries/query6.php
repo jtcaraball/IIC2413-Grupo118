@@ -5,7 +5,19 @@
         # Import database object.
         require("../config/connection.php");
         # Declare query.
-        $query = "";
+        $query = "SELECT Personal.buq_id, Buque.buq_nombre, BuquePesquero.tipo_pesca, COUNT(Personal.buq_id) 
+                  FROM Personal, BuquePesquero, Buque 
+                  WHERE Personal.buq_id = BuquePesquero.buq_id 
+                  AND Personal.buq_id = Buque.buq_id 
+                  GROUP BY Buque.buq_nombre, Personal.buq_id, BuquePesquero.tipo_pesca 
+                  HAVING COUNT(Personal.buq_id) = 
+                    (SELECT MAX(maximo.valor) 
+                    FROM 
+                        (SELECT Personal.buq_id, COUNT(Personal.buq_id) AS valor 
+                        FROM Personal, BuquePesquero 
+                        WHERE Personal.buq_id = BuquePesquero.buq_id  
+                        GROUP BY Personal.buq_id) 
+                    AS maximo);";
         # Retrieve data array.
         $result = $db -> prepare($query);
         $result -> execute();
@@ -18,7 +30,7 @@
             <th>Nombre</th>
             <th>País de registro</th>
             <th>Patente</th>
-            <th>ID de Naviera</th>
+            <th>Naviera</th>
         </tr>
 
         <?php

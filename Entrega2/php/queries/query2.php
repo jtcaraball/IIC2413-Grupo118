@@ -5,8 +5,12 @@
         # Import database object.
         require("../config/connection.php");
         # Declare query.
-        $naviera_nombre = strtoupper($_POST["naviera_nombre"]);
-        $query = "";
+        $naviera_nombre = strtolower($_POST["naviera_nombre"]);
+        $query = "SELECT Buque.* 
+                  FROM Buque, Naviera 
+                  WHERE LOWER(Naviera.nav_nombre) 
+                  LIKE '%$naviera_nombre%' 
+                  AND Buque.nav_id = Naviera.nav_id;";
         # Retrieve data array.
         $result = $db -> prepare($query);
         $result -> execute();
@@ -19,7 +23,7 @@
             <th>Nombre</th>
             <th>País de registro</th>
             <th>Patente</th>
-            <th>ID de Naviera</th>
+            <th>Naviera</th>
         </tr>
 
         <?php

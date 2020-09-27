@@ -1,5 +1,10 @@
 <?php include('layout/header.html') ?>
 
+<!-- 
+    General modeling principle taken from the Ayudantia2 web app example available at:
+    https://github.com/IIC2413/Syllabus-2020-2/tree/master/Ayudantias/AY_02/example-app
+-->
+
 <body>
 
     <h1 align="center">Consultas</h1>

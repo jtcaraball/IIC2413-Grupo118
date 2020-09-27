@@ -5,7 +5,7 @@
         # Import database object.
         require("../config/connection.php");
         # Declare query.
-        $query = "";
+        $query = "SELECT nav_nombre FROM Naviera;";
         # Retrieve data array.
         $result = $db -> prepare($query);
         $result -> execute();

@@ -5,9 +5,32 @@
         # Import database object.
         require("../config/connection.php");
         # Declare query.
-        $buque_nombre = strtoupper($_POST["buque_nombre"]);
-        $puerto_nombre = strtoupper($_POST["puerto_nombre"]);
-        $query = "";
+        $buque_nombre = strtolower($_POST["buque_nombre"]);
+        $puerto_nombre = strtolower($_POST["puerto_nombre"]);
+        $query = "SELECT Buque.* 
+                  FROM (
+                        SELECT * 
+                        FROM Buques, Puerto, Atraque 
+                        WHERE LOWER(Puerto.puerto_nombre) LIKE '%$puerto_nombre%' 
+                        AND LOWER(Buque.buq_nombre) LIKE '%$buque_nombre%' 
+                        AND Atraque.buq_id = Buque.buq_id
+                        ) 
+                  AS Foo, Buque, Atraque 
+                  WHERE (
+                        (Atraque.fecha_atraque >= Foo.fecha_atraque 
+                        AND Atraque.fecha_atraque <= Foo.fecha_salida) 
+                        OR 
+                        (Atraque.fecha_salida >= Foo.fecha_atraque 
+                        AND Atraque.fecha_salida <= Foo.fecha_salida) 
+                        OR 
+                        (Atraque.fecha_atraque <= Foo.fecha_atraque 
+                        AND Atraque.fecha_salida >= Foo.fecha_salida) 
+                        OR 
+                        (Atraque.fecha_atraque >= Foo.fecha_atraque 
+                        AND Atraque.fecha_salida <= Foo.fecha_salida)
+                        ) 
+                  AND Atraque.buq_id <> Foo.buq_id 
+                  AND Buque.buq_id = Atraque.buq_id;";
         # Retrieve data array.
         $result = $db -> prepare($query);
         $result -> execute();
@@ -20,7 +43,7 @@
             <th>Nombre</th>
             <th>País de registro</th>
             <th>Patente</th>
-            <th>ID de Naviera</th>
+            <th>Naviera</th>
         </tr>
 
         <?php

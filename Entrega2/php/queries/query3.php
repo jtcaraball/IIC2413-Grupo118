@@ -6,8 +6,17 @@
         require("../config/connection.php");
         # Declare query.
         $año = $_POST["año"];
-        $puerto_nombre = strtoupper($_POST["puerto_nombre"]);
-        $query = "";
+        $año_low = $año - 1;
+        $año_up = $año + 1;
+        $puerto_nombre = strtolower($_POST["puerto_nombre"]);
+        $query = "SELECT Atraque.fecha_atraque, Buque.*, Puerto.puerto_nombre 
+                  FROM Buque, Atraque, Puerto 
+                  WHERE LOWER(Puerto.puerto_nombre) LIKE '%$puerto_nombre%' 
+                  AND Atraque.puerto_id = Puerto.puerto_id 
+                  AND Atraque.buq_id = Buque.buq_id 
+                  AND Atraque.fecha_atraque > '$año_low-12-31 23:59:59' 
+                  AND Atraque.fecha_atraque < '$año_up-01-01 00:00:00' 
+                  ORDER BY Atraque.fecha_atraque;";
         # Retrieve data array.
         $result = $db -> prepare($query);
         $result -> execute();
@@ -20,7 +29,7 @@
             <th>Nombre</th>
             <th>País de registro</th>
             <th>Patente</th>
-            <th>ID de Naviera</th>
+            <th>Naviera</th>
         </tr>
 
         <?php

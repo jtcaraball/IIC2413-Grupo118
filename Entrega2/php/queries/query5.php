@@ -7,13 +7,19 @@
         # Declare query.
         # Catch if the gender field is left unanswered.
         try {
-            $genero = strtoupper($_POST["genero"]);
+            $genero = strtolower($_POST["genero"]);
         } catch (Exception $e) {
             # In case it is return an empty table.
-            $genero = " "
+            $genero = " ";
         }
-        $puerto_nombre = strtoupper($_POST["puerto_nombre"]);
-        $query = "";
+        $puerto_nombre = strtolower($_POST["puerto_nombre"]);
+        $query = "SELECT Personal.* 
+                  FROM Personal, Atraque, Puerto 
+                  WHERE Atraque.puerto_id = Puerto.puerto_id 
+                  AND LOWER(Personal.genero) LIKE '%$genero%' 
+                  AND LOWER(Personal.cargo) = 'capitan' 
+                  AND Atraque.buq_id = Personal.buq_id 
+                  AND LOWER(Puerto.puerto_nombre) LIKE '%$puerto_nombre%';";
         # Retrieve data array.
         $result = $db -> prepare($query);
         $result -> execute();
@@ -29,7 +35,7 @@
             <th>Genero</th>
             <th>Pasaporte</th>
             <th>Cargo</th>
-            <th>ID de Buque</th>
+            <th>Buque</th>
         </tr>
 
         <?php
