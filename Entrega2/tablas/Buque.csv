@@ -1,251 +1,251 @@
-id_buque,pais
-0,India
-1,Canada
-2,Singapur
-3,Costa Rica
-4,Argentina
-5,Qatar
-6,Qatar
-7,Mexico
-8,Japon
-9,Siria
-10,Irlanda
-11,Nicaragua
-12,Filipinas
-13,Colombia
-14,Brasil
-15,Estados Unidos
-16,Estados Unidos
-17,Mexico
-18,Argentina
-19,Portugal
-20,Mexico
-21,Panama
-22,Nueva Zelanda
-23,Islas Malvinas
-24,Costa Rica
-25,Austria
-26,Belgica
-27,Mexico
-28,Islas Malvinas
-29,Indonesia
-30,Australia
-31,Canada
-32,España
-33,Finlandia
-34,Peru
-35,Jamaica
-36,Japon
-37,Tailandia
-38,Dinamarca
-39,Nicaragua
-40,Filipinas
-41,Republica Dominicana
-42,Italia
-43,Estados Unidos
-44,Sudafrica
-45,Austria
-46,India
-47,Singapur
-48,Egipto
-49,Japon
-50,Australia
-51,Peru
-52,España
-53,Peru
-54,Australia
-55,España
-56,Peru
-57,Siria
-58,Austria
-59,Sudafrica
-60,Australia
-61,Indonesia
-62,Argentina
-63,Mexico
-64,Republica Dominicana
-65,Republica Dominicana
-66,Nicaragua
-67,Islas Malvinas
-68,Siria
-69,Portugal
-70,Peru
-71,Brasil
-72,Sudafrica
-73,Portugal
-74,Siria
-75,Finlandia
-76,Japon
-77,Finlandia
-78,Egipto
-79,Filipinas
-80,Paraguay
-81,Tailandia
-82,Panama
-83,Sudafrica
-84,España
-85,Vietnam
-86,Islas Malvinas
-87,España
-88,Jamaica
-89,Reino Unido
-90,Noruega
-91,Italia
-92,Singapur
-93,Argentina
-94,Noruega
-95,Italia
-96,Dinamarca
-97,Argentina
-98,Portugal
-99,Noruega
-100,Suiza
-101,Paraguay
-102,Australia
-103,Panama
-104,India
-105,Suiza
-106,Noruega
-107,Egipto
-108,Suiza
-109,Nicaragua
-110,Colombia
-111,Noruega
-112,Brasil
-113,Australia
-114,Canada
-115,Paraguay
-116,Dinamarca
-117,Noruega
-118,Japon
-119,Argentina
-120,Polonia
-121,Republica Dominicana
-122,Austria
-123,Austria
-124,Reino Unido
-125,Ecuador
-126,Japon
-127,Islas Malvinas
-128,Republica Dominicana
-129,Ecuador
-130,Mexico
-131,Canada
-132,Finlandia
-133,Austria
-134,Costa Rica
-135,Estados Unidos
-136,Australia
-137,Ecuador
-138,Islas Malvinas
-139,Canada
-140,Chile
-141,Peru
-142,Nicaragua
-143,Suiza
-144,Nueva Zelanda
-145,Islas Malvinas
-146,Austria
-147,Republica Dominicana
-148,Nicaragua
-149,Argentina
-150,España
-151,Tailandia
-152,Polonia
-153,Jamaica
-154,Argentina
-155,Japon
-156,Italia
-157,Belgica
-158,Republica Dominicana
-159,Portugal
-160,Islas Malvinas
-161,Sudafrica
-162,Belgica
-163,Japon
-164,Tailandia
-165,Colombia
-166,Portugal
-167,Filipinas
-168,Jamaica
-169,Chile
-170,India
-171,Ecuador
-172,Ecuador
-173,Islas Malvinas
-174,Qatar
-175,Suiza
-176,Cuba
-177,Australia
-178,India
-179,Panama
-180,Noruega
-181,Egipto
-182,Australia
-183,Singapur
-184,Belgica
-185,Paraguay
-186,Belgica
-187,Indonesia
-188,Tailandia
-189,Sudafrica
-190,Dinamarca
-191,Italia
-192,España
-193,Argentina
-194,Panama
-195,Austria
-196,Filipinas
-197,Qatar
-198,Islas Malvinas
-199,Costa Rica
-200,Polonia
-201,Cuba
-202,Portugal
-203,Finlandia
-204,Tailandia
-205,Cuba
-206,Brasil
-207,Jamaica
-208,Costa Rica
-209,Qatar
-210,Polonia
-211,Jamaica
-212,Filipinas
-213,Paraguay
-214,Indonesia
-215,Islas Malvinas
-216,India
-217,Qatar
-218,Chile
-219,Belgica
-220,Argentina
-221,Corea
-222,Suiza
-223,Islas Malvinas
-224,Nueva Zelanda
-225,Dinamarca
-226,Brasil
-227,Vietnam
-228,Islas Malvinas
-229,Colombia
-230,Nueva Zelanda
-231,Tailandia
-232,Reino Unido
-233,Colombia
-234,Paraguay
-235,Tailandia
-236,Chile
-237,Qatar
-238,Nicaragua
-239,Panama
-240,Filipinas
-241,Singapur
-242,Tailandia
-243,Irlanda
-244,Egipto
-245,Finlandia
-246,Chile
-247,Panama
-248,Mexico
-249,Chile
+id_buque,nombre,patente,nav_id,pais_id
+0,Abbotsham,ZX2922,0,0
+1,Abdiel,PM8536,0,1
+2,Abeille,VC7492,1,2
+3,Abelardo,LS5992,2,3
+4,Abelia,PJ5481,3,4
+5,Abercrombie,LX6914,4,5
+6,Aberdeen,EH9187,5,5
+7,Aberford,ST8633,6,6
+8,Aberfoyle,EY2745,2,7
+9,abergavenny,LA5643,7,8
+10,Abigail,AU5998,8,9
+11,Abingdon,ET5609,9,10
+12,abondance,MO4425,8,11
+13,aboukir,BY5212,5,12
+14,Abrahan,EG8528,8,13
+15,Abrams Oferta,QD4440,5,14
+16,Abundancia,VX5561,2,14
+17,Abisinia,VT6220,10,6
+18,Acacia,XK7318,1,4
+19,Acanto,WW2485,5,15
+20,acasta,HV2199,3,6
+21,As,ID7819,1,16
+22,Acertif,QA2495,11,17
+23,achates,WF7217,12,18
+24,acheron,BN4195,3,3
+25,Achille,UW2735,13,19
+26,Aquiles,EF7582,13,20
+27,Aconito,OT5458,10,6
+28,Bellota,YN4644,0,18
+29,Acteon,FS3778,14,21
+30,acteon,VW7522,8,22
+31,Calypso,VI4743,1,1
+32,Activo,OJ8771,4,23
+33,Actividad,OC4762,15,24
+34,Agudo,XN4914,14,25
+35,Adan y Eva,XP9141,11,26
+36,Firme,EX4705,16,7
+37,inflexible II,BJ4245,9,27
+38,Agrega un,RH8308,12,28
+39,Sumador,YP3858,15,10
+40,Adelaide,AL8743,16,11
+41,Adepto,KM2551,16,29
+42,Admirable,EI5702,7,30
+43,Almirante Devries,RJ2733,4,14
+44,Almirante Farragut,YG2900,17,31
+45,Almirantazgo,TO8113,12,19
+46,Adonis,HE7029,18,0
+47,Habil,HB3228,4,2
+48,Adur,OF5956,19,32
+49,Avanzar,SG9128,14,7
+50,Ventaja,GO7311,16,22
+51,Advantagia,PM7495,9,25
+52,Aventuras,GS7205,8,23
+53,aventura Galera,PU5101,0,25
+54,Premio aventura,VP2429,2,22
+55,Adversario,MO4968,11,23
+56,Consejo,BI5654,12,25
+57,Premio consejos,YB8271,20,8
+58,Asesor,VT2032,2,19
+59,Eneas,MU6547,14,31
+60,Eolo,IW2489,8,22
+61,Aetna,IG9597,2,21
+62,Affleck,AU6167,3,4
+63,Refriega,JD8184,19,6
+64,Africa,RK2324,4,29
+65,Africaine,LN6036,2,29
+66,Afridi,PZ3477,10,10
+67,Afrikander,GM1638,8,18
+68,Agamenon,CI3218,18,8
+69,Aladdin,UH6836,0,15
+70,Alamein,QJ6353,18,25
+71,Alarico,LW4637,3,13
+72,Alarma,SL2391,7,31
+73,Alaunia II,PP3724,20,15
+74,albacora,QL4591,13,8
+75,Alban,BF7024,1,24
+76,Albanaise,QI7769,20,7
+77,Albany,FM3163,9,24
+78,Albatros,NX3376,14,32
+79,Albemarle,XG7925,12,11
+80,alberni,KY2131,17,33
+81,Albert,MW6341,5,27
+82,Alberta,FU8868,9,16
+83,Albian,UH1378,20,31
+84,Albrighton,GT9752,5,23
+85,Albuera,OB9598,16,34
+86,albury,VR7517,19,18
+87,Alcantara,GF5994,7,23
+88,Alcaston,HF1544,4,26
+89,blackwall,AI2283,14,35
+90,Agua Negra,KC2936,5,36
+91,Madera negra,MN1612,1,30
+92,Espada,OR9516,20,2
+93,BLAIRMORE,OE1789,12,4
+94,Blake,WD8846,21,36
+95,Blakeney,MZ9845,1,30
+96,Blanche,RV9799,5,28
+97,Blandford,IV2746,7,4
+98,Blankney,TJ7818,4,15
+99,Blaxton,OF1501,15,36
+100,Resplandor,BY4314,19,37
+101,Chaqueta de sport,AM9504,10,33
+102,Blean,ZV9679,18,22
+103,Bleasdale,SV9482,11,16
+104,blencathra,UL8619,9,0
+105,Blenheim,LF8633,7,37
+106,Bendicion,PR9667,14,36
+107,Blickling,MZ2239,18,32
+108,Bligh,WI9449,15,37
+109,Rubia,XG4556,11,10
+110,Sabueso,HW2014,9,12
+111,Floracion,BZ3311,12,36
+112,Flor,BB5259,1,13
+113,Campanilla,WC8293,8,22
+114,pechiazul,RY9242,18,1
+115,Blyth,OM4230,7,33
+116,Boadicea,AL1557,10,28
+117,bodenham,II3534,1,36
+118,Castillo bodiam,CG7403,11,7
+119,Bogam,WX5990,3,4
+120,Negrita,HE5247,0,38
+121,Bolebroke,HH5023,3,29
+122,Bolton Castle,FI2331,2,19
+123,Bolton,YB3879,16,19
+124,Bombardear,OY7209,17,35
+125,Castillo de Bombay,NK1201,13,39
+126,Bombay,MN4984,16,7
+127,Bumerang,PA1651,11,18
+128,Buenaventura,PJ8392,9,29
+129,Bonavoila,UE6214,7,39
+130,Bonetta,IJ4552,19,6
+131,Bonita,EF2295,11,1
+132,Bonito,RA3983,8,24
+133,Bonne Ciudadana,YC1851,11,19
+134,Bootle,XL6992,3,3
+135,Borraja,RC8468,0,14
+136,Frontera,XH5466,12,22
+137,Boreas,VH2584,17,39
+138,Boreham,CV4539,15,18
+139,Taladrador,VB9537,16,1
+140,Boscawen,OF5460,21,40
+141,Bossington,EB3227,18,25
+142,Boston,IH6707,15,10
+143,Botha,DA9671,9,37
+144,Bottisham,NL7862,9,17
+145,Bouclier,UJ2611,15,18
+146,Boulogne,PV7666,7,19
+147,Boulston,HH5472,15,29
+148,Bravucon,KQ3854,15,10
+149,Abundante,ON7101,14,4
+150,Generosidad,QC1164,5,23
+151,bourbonnaise,TW7915,9,27
+152,Bourdelais,EI5834,16,38
+153,Bowen,AI9121,5,26
+154,Castillo de Bowes,YE6286,1,4
+155,bowmanville,PJ3020,5,7
+156,Boxer,IX1197,2,30
+157,Boyne,YB1434,11,20
+158,Braak,LD3618,5,29
+159,Braave,IF9396,5,15
+160,Bradfield,AY3986,16,18
+161,Bradford,FJ6533,0,31
+162,Trenza,SU8617,4,20
+163,Braithwaite,LW6201,0,7
+164,Brakel,VG7905,10,27
+165,Castillo bramber,SM2508,3,12
+166,Zarza,MY3367,17,15
+167,Bramham,GS9404,21,11
+168,Brampton,HE8199,17,26
+169,Brandon,FA3127,5,40
+170,Branlebas,DQ3759,21,0
+171,brantford,RP8314,17,39
+172,Brantingham,MJ4934,15,39
+173,Valiente,YX2002,15,18
+174,Bravo,EV7485,19,5
+175,Brayford,HI7513,18,37
+176,Descarado,RO9221,18,41
+177,Brema,TR8211,16,22
+178,brearley,FO3430,0,0
+179,Brecon,LR2069,5,16
+180,Breconshire,GJ5946,12,36
+181,Breda,HB4367,7,32
+182,brenchley,VY5330,0,22
+183,Brereton,WF3051,13,2
+184,Brevdrageren,HI3831,10,20
+185,Brezo,UO8744,11,33
+186,Bridgewater,DV6261,6,20
+187,Castillo bridgnorth,TS8958,2,21
+188,Bridlington,LN8777,2,27
+189,Bridport,HK6767,18,31
+190,Brigadier,HE2921,3,28
+191,brigandine,BN3951,12,30
+192,Bergantin,TG8958,11,23
+193,Brigham,RK9162,15,4
+194,Brighton,NQ5495,7,16
+195,Brillante,HF4402,13,19
+196,Premio brillante,IT1233,6,11
+197,Brinkley,FN4513,14,5
+198,Brinton,OA5815,19,18
+199,briseis,WC2925,21,3
+200,Energico,CC4639,8,38
+201,Brissenden,UZ5981,7,41
+202,Bristol,DK4889,3,15
+203,Britania,DT6703,18,24
+204,britomart,JR2308,2,27
+205,britanico,YW8268,17,41
+206,Brixham,WK4832,20,13
+207,Broaderschap,NN8091,5,26
+208,Broadley,AV9914,10,3
+209,Sable,DC7834,8,5
+210,broadwater,GS9663,13,38
+211,Broadway,OH1392,18,26
+212,Brock,NP8695,8,11
+213,Brocklesby,PV6712,20,33
+214,brockville,ZV8179,4,21
+215,Rompi,OV3558,9,18
+216,brolga,KI7112,10,0
+217,Bronington,LV7419,5,5
+218,Penelope,DS0478,17,40
+219,Premio Dover,KH8053,6,20
+220,Dovey,XB6912,10,4
+221,downham,CE1914,5,42
+222,Downley,RW4421,16,37
+223,Continuar,UY2987,16,18
+224,Premio dragon,EE2109,13,17
+225,Libelula,RQ2918,0,28
+226,Pato,ZC6249,7,13
+227,Terrible,SQ8557,7,34
+228,Acorazado,GC3280,8,18
+229,Premio Dreadnought,NT2280,5,12
+230,Conductor,PZ1913,12,17
+231,Drochterland,NN2774,21,27
+232,Drogheda,PB7290,9,35
+233,Dromedario,GE9618,19,12
+234,Dromio,PK9613,13,33
+235,Droxford,CB1716,10,27
+236,Esclava,VI7863,10,40
+237,druida,OO2266,15,5
+238,drumheller,VI9753,17,10
+239,drummondville,FE1567,21,16
+240,Drury,DG5218,14,11
+241,Driada,LI5894,0,2
+242,dubbo,QJ1463,4,27
+243,Dubford,DY6365,10,9
+244,Gulnare,OI4579,21,32
+245,Gurkha,TQ5114,10,24
+246,guysborough,ED5736,7,40
+247,gympie,HP3120,19,16
+248,gitano,YT2845,6,6
+249,magnolia,ZP4420,10,40

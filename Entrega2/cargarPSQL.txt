@@ -3,46 +3,34 @@
 CREATE DATABASE entrega2;
 \c entrega2;
 
-CREATE TABLE Personal(per_id INT, nacionalidad VARCHAR(30), edad INT, genero VARCHAR(30), PRIMARY KEY(per_id));
-\COPY Personal from 'Personal.csv' DELIMITER ',' CSV HEADER;
+CREATE TABLE Pais(pais_id INT, pais_nombre VARCHAR(30), PRIMARY KEY(pais_id));
+\COPY Pais from 'Pais.csv' DELIMITER ',' CSV HEADER;
 
-CREATE TABLE IdPersonalPasaporte(per_id INT, pasaporte VARCHAR(30), FOREIGN KEY(per_id) REFERENCES Personal, PRIMARY KEY (per_id));
-\COPY IdPersonalPasaporte from 'IdPersonalPasaporte.csv' DELIMITER ',' CSV HEADER;
-
-CREATE TABLE IdPersonalNombre(per_id INT, per_nombre VARCHAR(50), FOREIGN KEY(per_id) REFERENCES Personal, PRIMARY KEY (per_id));
-\COPY IdPersonalNombre from 'IdPersonalNombre.csv' DELIMITER ',' CSV HEADER;
-
-CREATE TABLE Naviera(nav_nombre VARCHAR(40), pais_naviera VARCHAR(30), giro VARCHAR(50), PRIMARY KEY (nav_nombre));
+CREATE TABLE Naviera(nav_id INT,nav_nombre VARCHAR(40), giro VARCHAR(50), pais_id INT, FOREIGN KEY(pais_id) REFERENCES Pais, PRIMARY KEY (nav_id));
 \COPY Naviera from 'Naviera.csv' DELIMITER ',' CSV HEADER;
 
-CREATE TABLE Buque(buq_id INT, pais_registro VARCHAR(30), PRIMARY KEY (buq_id));
+CREATE TABLE Buque(buq_id INT, buq_nombre VARCHAR(30), patente VARCHAR(30), nav_id INT, pais_id INT, FOREIGN KEY(nav_id) REFERENCES Naviera, FOREIGN KEY(pais_id) REFERENCES Pais, PRIMARY KEY (buq_id));
 \COPY Buque from 'Buque.csv' DELIMITER ',' CSV HEADER;
 
-CREATE TABLE IdBuqueNombre(buq_id INT, buq_nombre VARCHAR(30), FOREIGN KEY(buq_id) REFERENCES Buque, PRIMARY KEY (buq_id));
-\COPY IdBuqueNombre from 'IdBuqueNombre.csv' DELIMITER ',' CSV HEADER;
-
-CREATE TABLE IdBuquePatente(buq_id INT, patente VARCHAR(30), FOREIGN KEY(buq_id) REFERENCES Buque, PRIMARY KEY (buq_id));
-\COPY IdBuquePatente from 'IdBuquePatente.csv' DELIMITER ',' CSV HEADER;
-
-CREATE TABLE BuquePesquero(buq_id INT, tipo_pesca VARCHAR(30), FOREIGN KEY(buq_id) REFERENCES Buque, PRIMARY KEY (buq_id));
+CREATE TABLE BuquePesquero(bpes_id INT, buq_id INT, tipo_pesca VARCHAR(30), FOREIGN KEY(buq_id) REFERENCES Buque, PRIMARY KEY (bpes_id));
 \COPY BuquePesquero from 'BuquePesquero.csv' DELIMITER ',' CSV HEADER;
 
-CREATE TABLE BuqueCarga(buq_id INT, max_containers INT, max_toneladas INT, FOREIGN KEY(buq_id) REFERENCES Buque, PRIMARY KEY (buq_id));
+CREATE TABLE BuqueCarga(bcar_id INT, buq_id INT, max_containers INT, max_toneladas INT, FOREIGN KEY(buq_id) REFERENCES Buque, PRIMARY KEY (bcar_id));
 \COPY BuqueCarga from 'BuqueCarga.csv' DELIMITER ',' CSV HEADER;
 
-CREATE TABLE BuquePetrolero(buq_id INT, max_litros INT, FOREIGN KEY(buq_id) REFERENCES Buque, PRIMARY KEY (buq_id));
+CREATE TABLE BuquePetrolero(bpet_id INT, buq_id INT, max_litros INT, FOREIGN KEY(buq_id) REFERENCES Buque, PRIMARY KEY (bpet_id));
 \COPY BuquePetrolero from 'BuquePetrolero.csv' DELIMITER ',' CSV HEADER;
 
-CREATE TABLE Tiene(buq_id INT, nav_nombre VARCHAR(40), FOREIGN KEY(buq_id) REFERENCES Buque, FOREIGN KEY(nav_nombre) REFERENCES Naviera, PRIMARY KEY (buq_id, nav_nombre));
-\COPY Tiene from 'Tiene.csv' DELIMITER ',' CSV HEADER;
+CREATE TABLE Personal(per_id INT, per_nombre VARCHAR(50), nacionalidad VARCHAR(30), pasaporte VARCHAR(30), edad INT, genero VARCHAR(30), buq_id INT, cargo VARCHAR(30), FOREIGN KEY(buq_id) REFERENCES Buque, PRIMARY KEY(per_id));
+\COPY Personal from 'Personal.csv' DELIMITER ',' CSV HEADER;
 
-CREATE TABLE Trabajan(per_id INT, buq_id INT, cargo VARCHAR(30), FOREIGN KEY(per_id) REFERENCES Personal, FOREIGN KEY(buq_id) REFERENCES Buque, PRIMARY KEY (per_id, buq_id));
-\COPY Trabajan from 'Trabajan.csv' DELIMITER ',' CSV HEADER;
+CREATE TABLE Puerto(puerto_id INT, puerto_nombre VARCHAR(30), PRIMARY KEY(puerto_id));
+\COPY Puerto from 'Puerto.csv' DELIMITER ',' CSV HEADER;
 
-CREATE TABLE Itinerario(fecha_atraque TIMESTAMP, buq_id INT, nombre_puerto VARCHAR(30), FOREIGN KEY(buq_id) REFERENCES Buque, PRIMARY KEY(fecha_atraque, buq_id));
+CREATE TABLE Itinerario(it_id INT, fecha_llegada TIMESTAMP, buq_id INT, puerto_id INT, FOREIGN KEY(buq_id) REFERENCES Buque, FOREIGN KEY(puerto_id) REFERENCES Puerto, PRIMARY KEY(it_id));
 \COPY Itinerario from 'Itinerario.csv' DELIMITER ',' CSV HEADER;
 
-CREATE TABLE Atraque(fecha_atraque TIMESTAMP, fecha_salida TIMESTAMP, buq_id INT, nombre_puerto VARCHAR(30), FOREIGN KEY(buq_id) REFERENCES Buque, PRIMARY KEY(fecha_atraque, fecha_salida, buq_id));
+CREATE TABLE Atraque(atr_id INT, fecha_atraque TIMESTAMP, fecha_salida TIMESTAMP, buq_id INT, puerto_id INT, FOREIGN KEY(buq_id) REFERENCES Buque, FOREIGN KEY(puerto_id) REFERENCES Puerto, PRIMARY KEY(atr_id));
 \COPY Atraque from 'Atraque.csv' DELIMITER ',' CSV HEADER;
 
 #para ver constraints (primary y foreign keys)
