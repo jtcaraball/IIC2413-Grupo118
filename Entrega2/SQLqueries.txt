@@ -1,22 +1,23 @@
--- 1. Muestre el nombre de todas las navieras.
+
+-- case insensitive + matching parcial
+
+-- 1. Muestre el nombre de todas las navieras. INPUT ‘Francis Drake S.A.’
 SELECT nav_nombre FROM Naviera;
 
 -- 2. Muestre todos los buques de la naviera ‘Francis Drake S.A.’.
+SELECT Buque.* FROM Buque, Naviera WHERE LOWER(Naviera.nav_nombre) LIKE '%francis drake s.a.%' AND Buque.nav_id = Naviera.nav_id;
 
-SELECT Buque.* FROM Buque, Naviera WHERE Naviera.nav_nombre = 'Francis Drake S.A.' AND Buque.nav_id = Naviera.nav_id;
-
--- 3. Muestre todos los buques que hayan atracado en ‘Valparaiso’ el 2020.
+-- 3. Muestre todos los buques que hayan atracado en ‘Valparaiso’ el 2020. INPUT ‘Valparaiso’
 -- Incluir fecha de atraque?
 
-SELECT Atraque.fecha_atraque, Buque.* FROM Buque, Atraque WHERE Atraque.buq_id = Buque.buq_id AND Atraque.fecha_atraque > '2019-12-31 23:59:59' AND Atraque.fecha_atraque < '2021-01-01 00:00:00' ORDER BY Atraque.fecha_atraque;
+SELECT Atraque.fecha_atraque, Buque.*, Puerto.puerto_nombre FROM Buque, Atraque, Puerto WHERE LOWER(Puerto.puerto_nombre) LIKE '%valparaiso%' AND Atraque.puerto_id = Puerto.puerto_id AND Atraque.buq_id = Buque.buq_id AND Atraque.fecha_atraque > '2019-12-31 23:59:59' AND Atraque.fecha_atraque < '2021-01-01 00:00:00' ORDER BY Atraque.fecha_atraque;
 -- 4. Muestre todos los buques que hayan estado en ‘Mejillones’ al mismo tiempo que el buque ‘Magnolia’.
--- No hay buque 'Magnolia'
--- Esto da los atraques del buque 'Acorazado' en el puerto 'Mejillones'
-SELECT * FROM Buque, Atraque, Puerto WHERE Atraque.puerto_id = Puerto.puerto_id AND Atraque.buq_id = Buque.buq_id AND Buque.buq_nombre = 'Acorazado' AND Puerto.puerto_nombre = 'Mejillones';
 
--- 5. Encuentre todos los capitanes mujeres que han pasado por el puerto ‘Talcahuano’.
-SELECT Personal.* FROM Personal, Atraque, Puerto WHERE Atraque.puerto_id = Puerto.puerto_id AND Personal.genero = 'mujer' AND Personal.cargo = 'capitan' AND Atraque.buq_id = Personal.buq_id AND Puerto.puerto_nombre = 'Talcahuano';
+-- 5. Encuentre todos los capitanes mujeres que han pasado por el puerto ‘Talcahuano’. INPUT 'Talcahuano'
+SELECT Personal.* FROM Personal, Atraque, Puerto WHERE Atraque.puerto_id = Puerto.puerto_id AND Personal.genero = 'mujer' AND Personal.cargo = 'capitan' AND Atraque.buq_id = Personal.buq_id AND LOWER(Puerto.puerto_nombre) LIKE '%talcahuano%';
 
--- 6. Encuentre el buque pesquero que tiene m´as personas trabajando
+-- 6. Encuentre el buque pesquero que tiene mas personas trabajando
 -- Mostrar cantidad de personas?
 SELECT Personal.buq_id, Buque.buq_nombre, BuquePesquero.tipo_pesca, COUNT(Personal.buq_id) FROM Personal, BuquePesquero, Buque WHERE Personal.buq_id = BuquePesquero.buq_id AND Personal.buq_id = Buque.buq_id GROUP BY Buque.buq_nombre, Personal.buq_id, BuquePesquero.tipo_pesca HAVING COUNT(Personal.buq_id) = (SELECT MAX(maximo.valor) FROM (SELECT Personal.buq_id, COUNT(Personal.buq_id) AS valor FROM Personal, BuquePesquero WHERE Personal.buq_id = BuquePesquero.buq_id  GROUP BY Personal.buq_id) AS maximo);
+
+--------------------
