@@ -9,26 +9,22 @@
         $puerto_nombre = strtolower($_POST["puerto_nombre"]);
         $query = "SELECT Buque.* 
                   FROM (
-                        SELECT * 
-                        FROM Buque, Puerto, Atraque 
-                        WHERE LOWER(Puerto.puerto_nombre) LIKE '%$puerto_nombre%' 
-                        AND LOWER(Buque.buq_nombre) LIKE '%$buque_nombre%' 
-                        AND Atraque.buq_id = Buque.buq_id
-                        ) 
+                    SELECT * 
+                    FROM Buque, Puerto, Atraque 
+                    WHERE LOWER(Puerto.puerto_nombre) LIKE '%$puerto_nombre%' 
+                    AND LOWER(Buque.buq_nombre) LIKE '%$buque_nombre%' 
+                    AND Atraque.buq_id = Buque.buq_id
+                    ) 
                   AS Foo, Buque, Atraque 
                   WHERE (
-                        (Atraque.fecha_atraque >= Foo.fecha_atraque 
-                        AND Atraque.fecha_atraque <= Foo.fecha_salida) 
+                        ((Atraque.fecha_atraque >= Foo.fecha_atraque AND Atraque.fecha_atraque <= Foo.fecha_salida) 
                         OR 
-                        (Atraque.fecha_salida >= Foo.fecha_atraque 
-                        AND Atraque.fecha_salida <= Foo.fecha_salida) 
+                        (Atraque.fecha_salida >= Foo.fecha_atraque AND Atraque.fecha_salida <= Foo.fecha_salida)) 
+                    OR 
+                        ((Atraque.fecha_atraque <= Foo.fecha_atraque AND Atraque.fecha_salida >= Foo.fecha_salida) 
                         OR 
-                        (Atraque.fecha_atraque <= Foo.fecha_atraque 
-                        AND Atraque.fecha_salida >= Foo.fecha_salida) 
-                        OR 
-                        (Atraque.fecha_atraque >= Foo.fecha_atraque 
-                        AND Atraque.fecha_salida <= Foo.fecha_salida)
-                        ) 
+                        (Atraque.fecha_atraque >= Foo.fecha_atraque AND Atraque.fecha_salida <= Foo.fecha_salida))
+                    ) 
                   AND Atraque.buq_id <> Foo.buq_id 
                   AND Buque.buq_id = Atraque.buq_id;";
         # Retrieve data array.
