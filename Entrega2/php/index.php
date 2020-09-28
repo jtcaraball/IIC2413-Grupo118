@@ -18,18 +18,18 @@
 
     <h3 align="center">Consulta 2: Buques de una naviera.</h3>
     <form align="center" action="queries/query2.php" method="post">
-        <label for="naviera_name">Nombre de naviera:</label>
-        <input type="text" name="naviera_name" value=" ">
+        <label for="naviera_nombre">Nombre de naviera:</label>
+        <input type="text" name="naviera_nombre" value=" ">
         <br/>
         <input type="submit" value="Buscar">
     </form>
 
     <h3 align="center">Consulta 3: Buques que atracan en un puerto para un año.</h3>
     <form align="center" action="queries/query3.php" method="post">
-        <label for="puerto_name">Nombre del puerto:</label>
-        <input type="text" name="puerto_name" value=" ">
+        <label for="puerto_nombre">Nombre del puerto:</label>
+        <input type="text" name="puerto_nombre" value=" ">
         <br/>
-        <label for="naviera_name">Año:</label>
+        <label for="año">Año:</label>
         <input type="number" name="año" min="1970" max="2099" value=2020>
         <br/>
         <input type="submit" value="Buscar">
@@ -37,11 +37,11 @@
 
     <h3 align="center">Consulta 4: Buques en un puerto al mismo tiempo que otro buque.</h3>
     <form align="center" action="queries/query4.php" method="post">
-        <label for="puerto_name">Nombre del puerto:</label>
-        <input type="text" name="puerto_name" value=" ">
+        <label for="puerto_nombre">Nombre del puerto:</label>
+        <input type="text" name="puerto_nombre" value=" ">
         <br/>
-        <label for="buque_name">Nombre del buque:</label>
-        <input type="text" name="buque_name" value=" ">
+        <label for="buque_nombre">Nombre del buque:</label>
+        <input type="text" name="buque_nombre" value=" ">
         <br/>
         <input type="submit" value="Buscar">
     </form>
@@ -53,8 +53,8 @@
         <label for="hombre">Hombre</label>
         <input type="radio" name="genero" value="hombre">
         <br/>
-        <label for="puerto_name">Nombre del puerto:</label>
-        <input type="text" name="puerto_name" value=" ">
+        <label for="puerto_nombre">Nombre del puerto:</label>
+        <input type="text" name="puerto_nombre" value=" ">
         <br/>
         <input type="submit" value="Buscar">
     </form>
