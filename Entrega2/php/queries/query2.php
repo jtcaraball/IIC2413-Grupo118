@@ -14,6 +14,7 @@
         $result = $db -> prepare($query);
         $result -> execute();
         $data = $result -> fetchAll();
+        echo $query;
     ?>
 
     <table>
