@@ -3,7 +3,7 @@
 <body>
     <?php
         # Import database object.
-        require("../config/connection.php");
+        require("../layout/connection.php");
         # Declare query.
         $año = $_POST["año"];
         $año_low = $año - 1;

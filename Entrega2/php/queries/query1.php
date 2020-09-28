@@ -3,7 +3,7 @@
 <body>
     <?php
         # Import database object.
-        require("../config/connection.php");
+        require("../layout/connection.php");
         # Declare query.
         $query = "SELECT nav_nombre FROM Naviera;";
         # Retrieve data array.

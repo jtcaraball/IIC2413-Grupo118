@@ -3,7 +3,7 @@
 <body>
     <?php
         # Import database object.
-        require("../config/connection.php");
+        require("../layout/connection.php");
         # Declare query.
         $naviera_nombre = strtolower($_POST["naviera_nombre"]);
         $query = "SELECT Buque.* 

@@ -3,7 +3,7 @@
 <body>
     <?php
         # Import database object.
-        require("../config/connection.php");
+        require("../layout/connection.php");
         # Declare query.
         $query = "SELECT Personal.buq_id, Buque.buq_nombre, BuquePesquero.tipo_pesca, COUNT(Personal.buq_id) 
                   FROM Personal, BuquePesquero, Buque 
