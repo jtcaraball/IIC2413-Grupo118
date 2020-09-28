@@ -31,11 +31,11 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Nacionalidad</th>
+            <th>Pasaporte</th>
             <th>Edad</th>
             <th>Genero</th>
-            <th>Pasaporte</th>
-            <th>Cargo</th>
             <th>Buque</th>
+            <th>Cargo</th>
         </tr>
 
         <?php

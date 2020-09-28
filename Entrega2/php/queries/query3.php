@@ -27,9 +27,9 @@
         <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>País de registro</th>
             <th>Patente</th>
             <th>Naviera</th>
+            <th>País de registro</th>
         </tr>
 
         <?php
