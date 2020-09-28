@@ -8,8 +8,7 @@
         $naviera_nombre = strtolower($_POST["naviera_nombre"]);
         $query = "SELECT Buque.* 
                   FROM Buque, Naviera 
-                  WHERE LOWER(Naviera.nav_nombre) 
-                  LIKE '%$naviera_nombre%' 
+                  WHERE LOWER(Naviera.nav_nombre) LIKE '%$naviera_nombre%' 
                   AND Buque.nav_id = Naviera.nav_id;";
         # Retrieve data array.
         $result = $db -> prepare($query);

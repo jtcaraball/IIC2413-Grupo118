@@ -25,11 +25,13 @@
 
     <table>
         <tr>
+            <th>Fecha de  Atraque</th>
             <th>ID</th>
             <th>Nombre</th>
             <th>Patente</th>
             <th>Naviera</th>
             <th>País de registro</th>
+            <th>Nombre del Puerto</th>
         </tr>
 
         <?php
@@ -40,6 +42,8 @@
                     <td>$item[2]</td>
                     <td>$item[3]</td>
                     <td>$item[4]</td>
+                    <td>$item[5]</td>
+                    <td>$item[6]</td>
                 </tr>";
             }
         ?>

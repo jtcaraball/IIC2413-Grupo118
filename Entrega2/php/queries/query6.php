@@ -28,9 +28,8 @@
         <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Patente</th>
-            <th>Naviera</th>
-            <th>País de registro</th>
+            <th>Tipo de Pesca</th>
+            <th>Cantidad de Personal</th>
         </tr>
 
         <?php
@@ -40,7 +39,6 @@
                     <td>$item[1]</td>
                     <td>$item[2]</td>
                     <td>$item[3]</td>
-                    <td>$item[4]</td>
                 </tr>";
             }
         ?>
