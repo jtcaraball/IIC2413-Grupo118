@@ -9,7 +9,7 @@
         $puerto_nombre = strtolower($_POST["puerto_nombre"]);
         $query = "SELECT Buque.* 
                   FROM (
-                    SELECT * 
+                    SELECT Atraque.* 
                     FROM Buque, Puerto, Atraque 
                     WHERE LOWER(Puerto.puerto_nombre) LIKE '%$puerto_nombre%' 
                     AND LOWER(Buque.buq_nombre) LIKE '%$buque_nombre%' 
