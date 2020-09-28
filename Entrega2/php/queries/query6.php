@@ -1,4 +1,4 @@
-<?php include('..layout/header.html'); ?>
+<?php include('../layout/header.html'); ?>
 
 <body>
     <?php
