@@ -59,7 +59,7 @@
         <input type="submit" value="Buscar">
     </form>
 
-    <h3 align="center">Consulta 6: Buque con mayor cantidad de trabajadores.</h3>
+    <h3 align="center">Consulta 6: Buques pesqueros con mayor cantidad de trabajadores.</h3>
     <form align="center" action="queries/query6.php" method="post">
         <input type="submit" value="Buscar">
     </form>

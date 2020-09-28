@@ -10,7 +10,7 @@
         $query = "SELECT Buque.* 
                   FROM (
                         SELECT * 
-                        FROM Buques, Puerto, Atraque 
+                        FROM Buque, Puerto, Atraque 
                         WHERE LOWER(Puerto.puerto_nombre) LIKE '%$puerto_nombre%' 
                         AND LOWER(Buque.buq_nombre) LIKE '%$buque_nombre%' 
                         AND Atraque.buq_id = Buque.buq_id
