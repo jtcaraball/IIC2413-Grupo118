@@ -7,12 +7,13 @@
         # Declare query.
         $buque_nombre = strtolower($_POST["buque_nombre"]);
         $puerto_nombre = strtolower($_POST["puerto_nombre"]);
-        $query = "SELECT Buque.* 
+        $query = "SELECT Buque.*, Atraque.puerto_id 
                   FROM (
                     SELECT Atraque.* 
                     FROM Buque, Puerto, Atraque 
-                    WHERE LOWER(Puerto.puerto_nombre) LIKE '%$puerto_nombre%' 
-                    AND LOWER(Buque.buq_nombre) LIKE '%$buque_nombre%' 
+                    WHERE LOWER(Puerto.puerto_nombre) LIKE '%$puerto_nombre%'
+                    AND Atraque.puerto_id = Puerto.puerto_id
+                    AND LOWER(Buque.buq_nombre) LIKE '%$buque_nombre%'
                     AND Atraque.buq_id = Buque.buq_id
                     ) 
                   AS Foo, Buque, Atraque 
@@ -40,6 +41,7 @@
             <th>Patente</th>
             <th>Naviera</th>
             <th>País de registro</th>
+            <th>Puerto ID</th>
         </tr>
 
         <?php
@@ -50,6 +52,7 @@
                     <td>$item[2]</td>
                     <td>$item[3]</td>
                     <td>$item[4]</td>
+                    <td>$item[5]</td>
                 </tr>";
             }
         ?>
